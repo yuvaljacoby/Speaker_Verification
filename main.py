@@ -1,4 +1,7 @@
-import tensorflow as tf
+import warnings  
+with warnings.catch_warnings():  
+    warnings.filterwarnings("ignore",category=FutureWarning)
+    import tensorflow as tf
 import os
 from model import train, test
 from configuration import get_config

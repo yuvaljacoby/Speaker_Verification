@@ -1,4 +1,7 @@
-import tensorflow as tf
+import warnings  
+with warnings.catch_warnings():  
+    warnings.filterwarnings("ignore",category=FutureWarning)
+    import tensorflow as tf
 import numpy as np
 import os
 import librosa
