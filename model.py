@@ -25,7 +25,7 @@ def train(path):
 
     # embedding lstm (3-layer default)
     with tf.variable_scope("lstm"):
-        lstm_cells = [tf.contrib.rnn.LSTMCell(num_units=config.hidden, num_proj=config.proj) for i in range(config.num_layer)]
+        lstm_cells = [tf.contrib.rnn.LSTMCell(num_units=config.hidden, num_proj=config.proj) for i in range(config.num  _layer)]
         lstm = tf.contrib.rnn.MultiRNNCell(lstm_cells)    # define lstm op and variables
         outputs, _ = tf.nn.dynamic_rnn(cell=lstm, inputs=batch, dtype=tf.float32, time_major=True)   # for TI-VS must use dynamic rnn
         embedded = outputs[-1]                            # the last ouput is the embedded d-vector
