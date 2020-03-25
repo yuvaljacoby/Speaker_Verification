@@ -30,7 +30,7 @@ def create_sbatch(output_folder, cache_folder=''):
             # model_name = model[:model.rfind('.')]
             slurm_file.write('#!/bin/bash\n')
             slurm_file.write('#SBATCH --job-name=train_sbatch_{}_{}\n'.format(i, exp_time))
-            slurm_file.write('#SBATCH --cpus-per-task=2\n')
+            slurm_file.write('#SBATCH --cpus-per-task=10\n')
             slurm_file.write('#SBATCH --output={}train_{}.out\n'.format(LOG_FOLDER, i))
             slurm_file.write('#SBATCH --time=05:00:00\n')
             slurm_file.write('#SBATCH --mem-per-cpu=1020\n')
